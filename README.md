@@ -49,3 +49,35 @@ private Either<Integer, Exception> parseNumber(String number) {
     }
 }
 ```
+
+Or an imperative version:  
+```java
+private void run2() {
+    Either<String, Exception> downloaded = downloadNumber();
+    
+    Either<Integer, Exception> downloadedParsedNumber;
+    if (downloaded.isLeft()) {
+        Either<Integer, Exception> parsedNumber = parseNumber(downloaded.getLeft());
+        if (parsedNumber.isLeft()) {
+            downloadedParsedNumber = Either.left(parsedNumber.getLeft());
+        } else {
+            downloadedParsedNumber = Either.right(parsedNumber.getRight());
+        }
+    } else {
+        downloadedParsedNumber = Either.right(downloaded.getRight());
+    }
+    
+    Either<Float, Exception> mappedNumber;
+    if (downloadedParsedNumber.isLeft()) {
+        mappedNumber = Either.left(downloadedParsedNumber.getLeft() / 100.0f);
+    } else {
+        mappedNumber = Either.right(downloadedParsedNumber.getRight());
+    }
+    
+    if (mappedNumber.isLeft()) {
+        System.out.println("Got a number: " + mappedNumber.getLeft());
+    } else {
+        System.out.println("Got an error: " + mappedNumber.getRight());
+    }
+}
+```
