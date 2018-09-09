@@ -28,7 +28,23 @@ Has both a simple imperative interface and a fluent one:
 # Setup
 [![](https://jitpack.io/v/ts14ic/Either.svg)](https://jitpack.io/#ts14ic/Either)
 
-Click the badge up there
+Click the badge up there to get the latest version. But it's usually something like:  
+
+Step 1. Add it in your root build.gradle at the end of repositories:
+```gradle
+	allprojects {
+		repositories {
+			// add this
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Step 2. Add the dependency
+```gradle
+	dependencies {
+	        implementation 'com.github.ts14ic:Either:v0.1.1'
+	}
+```
 
 # Example usages
 What the interface can do, can be seen here:  
