@@ -32,18 +32,18 @@ Click the badge up there to get the latest version. But it's usually something l
 
 Step 1. Add it in your root build.gradle at the end of repositories:
 ```gradle
-	allprojects {
-		repositories {
-			// add this
-			maven { url 'https://jitpack.io' }
-		}
+allprojects {
+	repositories {
+		// add this
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 Step 2. Add the dependency
 ```gradle
-	dependencies {
-	        implementation 'com.github.ts14ic:Either:v0.1.1'
-	}
+dependencies {
+        implementation 'com.github.ts14ic:Either:v0.1.1'
+}
 ```
 
 # Example usages
