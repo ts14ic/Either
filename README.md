@@ -25,6 +25,7 @@ Has both a simple imperative interface and a fluent one:
 # Version history
 * 0.1 - initial
 * 0.1.1 - published javadocs and sources
+* 0.1.2 - equals and hashcode were added
 
 # Setup
 [![](https://jitpack.io/v/ts14ic/Either.svg)](https://jitpack.io/#ts14ic/Either)
@@ -43,7 +44,7 @@ allprojects {
 Step 2. Add the dependency
 ```gradle
 dependencies {
-        implementation 'com.github.ts14ic:Either:v0.1.1'
+        implementation 'com.github.ts14ic:Either:v0.1.2'
 }
 ```
 
