@@ -47,7 +47,7 @@ allprojects {
 Step 2. Add the dependency
 ```gradle
 dependencies {
-        implementation 'com.github.ts14ic:Either:v0.1.2'
+        implementation 'com.github.ts14ic:Either:v0.1.3'
 }
 ```
 
