@@ -23,24 +23,12 @@ Has both a simple imperative interface and a fluent one:
 
 # Version history
 * 0.1 - initial
+* 0.1.1 - published javadocs and sources
 
 # Setup
 [![](https://jitpack.io/v/ts14ic/Either.svg)](https://jitpack.io/#ts14ic/Either)
 
-```gradle
-allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
-}
-```
-
-```gradle
-dependencies {
-	implementation 'com.github.User:Repo:Tag'
-}
-```
+Click the badge up there
 
 # Example usages
 What the interface can do, can be seen here:  
