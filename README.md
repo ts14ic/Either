@@ -22,6 +22,8 @@ Has both a simple imperative interface and a fluent one:
 * toString() - Calls `String.valueOf()` on the contained value (be it left or right)
 * toDebugString - Returns a string in the format of `"Either.Left{value}"` or `"Either.Right{value}"`     
 
+The online javadoc can be see here: [click me](https://jitpack.io/com/github/ts14ic/Either/v0.1.2/javadoc/)  
+
 # Version history
 * 0.1 - initial
 * 0.1.1 - published javadocs and sources
