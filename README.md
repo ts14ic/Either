@@ -28,6 +28,7 @@ The online javadoc can be see here: [click me](https://jitpack.io/com/github/ts1
 * 0.1 - initial
 * 0.1.1 - published javadocs and sources
 * 0.1.2 - equals and hashcode were added
+* 0.1.3 - make Either constructor package private
 
 # Setup
 [![](https://jitpack.io/v/ts14ic/Either.svg)](https://jitpack.io/#ts14ic/Either)

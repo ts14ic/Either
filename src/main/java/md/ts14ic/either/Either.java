@@ -15,6 +15,8 @@ public abstract class Either<L, R> {
         return new Right<>(value);
     }
 
+    Either() {}
+
     /**
      * Query whether this is Either.Left
      */
