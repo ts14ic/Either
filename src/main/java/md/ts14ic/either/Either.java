@@ -139,8 +139,18 @@ public abstract class Either<L, R> {
     public abstract <R2> Either<L, R2> flatMapRight(Mapper<R, Either<L, R2>> mapper);
 
     /**
+     * Compare with another Either
+     */
+    @Override
+    public abstract boolean equals(Object o);
+
+    @Override
+    public abstract int hashCode();
+
+    /**
      * Get stored object to string representation
      */
+    @Override
     public abstract String toString();
 
     /**

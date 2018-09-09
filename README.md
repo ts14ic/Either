@@ -18,6 +18,7 @@ Has both a simple imperative interface and a fluent one:
 * mapLeft(mapper) - Transforms the type/value of Either.Left (only type, if this is Either.Right)
 * flatMapLeft(mapper) - Same as above, but the mapper uses an Either return type
 * rotate() - Swap right and left sides 
+* equals() & hashCode - Two `Either`s are equal if they are same side and same value.
 * toString() - Calls `String.valueOf()` on the contained value (be it left or right)
 * toDebugString - Returns a string in the format of `"Either.Left{value}"` or `"Either.Right{value}"`     
 

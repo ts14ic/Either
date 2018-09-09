@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import static junit.framework.TestCase.*;
+import static org.junit.Assert.assertNotEquals;
 
 public class EitherTest {
     @Test
@@ -27,6 +28,27 @@ public class EitherTest {
         assertTrue(either.isRight());
         assertEquals("200", either.toString());
         assertEquals("Either.Right{200}", either.toDebugString());
+    }
+
+    @Test
+    public void testEquality() {
+        Either<Integer, String> one = Either.left(30);
+        Either<Integer, Object> two = Either.left(30);
+        // Right is ignored because both are left
+        assertEquals(one, two);
+        assertEquals(one.hashCode(), two.hashCode());
+
+
+        two = Either.left(40);
+        // both are left, but the values are different
+        assertNotEquals(one, two);
+        assertNotEquals(one.hashCode(), two.hashCode());
+
+
+        Either<String, Integer> three = Either.right(30);
+        // the values are same, but different side
+        assertNotEquals(one, three);
+        assertNotEquals(one.hashCode(), two.hashCode());
     }
 
     @Test

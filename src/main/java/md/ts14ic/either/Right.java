@@ -1,6 +1,7 @@
 package md.ts14ic.either;
 
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 class Right<L, R> extends Either<L, R> {
     private final R value;
@@ -100,6 +101,25 @@ class Right<L, R> extends Either<L, R> {
     @Override
     public <R2> Either<L, R2> flatMapRight(Mapper<R, Either<L, R2>> mapper) {
         return mapper.map(value);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Right<?, ?> that = (Right<?, ?>) o;
+        return value != null
+                ? value.equals(that.value)
+                : that.value == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = value != null
+                ? value.hashCode()
+                : 0;
+        return 31 * result;
     }
 
     @Override
