@@ -1,9 +1,12 @@
 # Either
 An `Either` monad backport.  
 Doesn't have Java 8+ dependencies so can be used in Android dev.  
+The implementation is opinionated (all methods require explicit right/left prefix).
+It was also made to avoid bringing in a big library with a big learning surface in a specific project,
+but instead is a small class whose whole documentation fits here.
 
 It's like an `Optional`, but instead of `empty` you have a different value of a different type.  
-Has both a simple imperative interface and a fluent one:    
+Can be used both imperatively and via its fluent interface:    
 * Either.left(value) - Box an Either.Left value
 * Either.right(value) - Box an Either.Right value
 * isLeft() - Query whether this is Either.Left
@@ -11,18 +14,18 @@ Has both a simple imperative interface and a fluent one:
 * getLeftOr(default) - Get the value of Either.Left or a provided default
 * getLeftOrElse(lazyDefault) - Get the value of Either.Left or a lazy provided default
 * getLeftOrThrow(lazyException) - Get the value of Either.Left or a lazy provided custom exception
-* ... same methods for right
 * apply(leftConsumer, rightConsumer) - Like a foreach, applies leftConsumer or rightConsumer depending on what this is
 * applyLeft(consumer) - Applies action to value if this is Either.Left or does nothing
 * map(leftMapper, rightMapper) - Transforms the type/value of Either, by mapping both sides
 * mapLeft(mapper) - Transforms the type/value of Either.Left (only type, if this is Either.Right)
 * flatMapLeft(mapper) - Same as above, but the mapper uses an Either return type
+* ... same methods for right
 * rotate() - Swap right and left sides 
 * equals() & hashCode - Two `Either`s are equal if they are same side and same value.
 * toString() - Calls `String.valueOf()` on the contained value (be it left or right)
-* toDebugString - Returns a string in the format of `"Either.Left{value}"` or `"Either.Right{value}"`     
+* toDebugString - Returns a string in the format of `"Either.Left{toString()}"` or `"Either.Right{toString()}"`     
 
-The online javadoc can be see here: [click me](https://jitpack.io/com/github/ts14ic/Either/v0.1.2/javadoc/)  
+The online javadoc can be see here: [click me](https://javadoc.jitpack.io/com/github/ts14ic/Either/v0.1.3/javadoc/md/ts14ic/either/Either.html)  
 
 # Version history
 * 0.1 - initial
